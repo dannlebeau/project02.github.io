@@ -1,4 +1,64 @@
+//Indicadores economicos
+
+fetch('https://mindicador.cl/api')
+  .then(response => response.json())
+  .then(data => {
+    // Extrae los valores de todas las variables de la API
+    const dolar = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.dolar.valor);
+    const euro = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.euro.valor);
+    const uf = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.uf.valor);
+    const ipc = data.ipc.valor;
+    const ivp = data.ivp.valor;
+    const tpm = data.tpm.valor;
+    const libra_cobre = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.libra_cobre.valor);
+    const tasa_desempleo = data.tasa_desempleo.valor;
+    const bitcoin = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.bitcoin.valor);
+    
+    // Agrega los indicadores al HTML
+    const indicadoresContainer = document.querySelector('.indicadores');
+    indicadoresContainer.innerHTML = `
+      <p>Dólar: ${dolar}</p>
+      <p>Euro: ${euro}</p>
+      <p>UF: ${uf}</p>
+      <p>IPC: ${ipc}%</p>
+      <p>IVP: $${ivp}</p>
+      <p>TPM: ${tpm}%</p>
+      <p>Libra de Cobre: ${libra_cobre}</p>
+      <p>Tasa de Desempleo: ${tasa_desempleo}%</p>
+      <p>Bitcoin: ${bitcoin}</p>
+    `;
+  })
+  .catch(error => console.error(error));
+
+//Indicadores 2
+/*const url = "https://mindicador.cl/api";
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("dolar").textContent = `$ ${data.dolar.valor.toFixed(2)}`;
+    document.getElementById("euro").textContent = `$ ${data.euro.valor.toFixed(2)}`;
+    document.getElementById("uf").textContent = `$ ${data.uf.valor.toFixed(2)}`;
+    document.getElementById("ipc").textContent = `$ ${data.ipc.valor.toFixed(2)}`;
+    document.getElementById("utm").textContent = `$ ${data.utm.valor.toFixed(2)}`;
+    document.getElementById("bitcoin").textContent = `$ ${data.bitcoin.valor.toFixed(2)}`;
+    // duplicar los elementos para repetir los indicadores
+    document.getElementById("dolar2").textContent = `$ ${data.dolar.valor.toFixed(2)}`;
+    document.getElementById("euro2").textContent = `$ ${data.euro.valor.toFixed(2)}`;
+    document.getElementById("uf2").textContent = `$ ${data.uf.valor.toFixed(2)}`;
+    document.getElementById("ipc2").textContent = `$ ${data.ipc.valor.toFixed(2)}`;
+    document.getElementById("utm2").textContent = `$ ${data.utm.valor.toFixed(2)}`;
+  })
+  .catch(error => console.log(error));
+*/
+
+
+
+  
+ 
+ 
  //Las Ultimas Noticias
+ /*
  (function() {
  function actualizarEnlace() {
     var fecha = new Date(document.getElementById("fecha").value);
@@ -50,8 +110,7 @@
     actualizarEnlaces(); //link LUN
   } 
  })();  
-
+*/
 
   
-  // Hoy por hoy
 
