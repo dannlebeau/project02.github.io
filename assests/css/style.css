@@ -3,6 +3,29 @@
   padding:10px;
 }
 
+#imagen, #imagen_3 {
+  margin: 20px;
+  border: 2px solid #FF0000; 
+  z-index: 1;/* Color de borde estático */
+}
+
+#imagen:hover, #imagen_3:hover {
+  transform: scale(2);
+  border-color: #00FF00;
+  z-index:  2;
+}
+#nacional {
+  position: relative; /* Establecer la posición relativa */
+  z-index: -3; /* Establecer el índice de posición */
+}
+
+.button {
+  position: relative; /* Establecer la posición relativa */
+  z-index: -3; /* Establecer el índice de posición */
+}
+
+
+
 
 .button {
   display: inline-block;

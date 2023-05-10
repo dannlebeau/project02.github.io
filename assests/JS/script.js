@@ -35,29 +35,6 @@ function obtenerIndicadores() {
 // Ejecutar la función cada 5 segundos (5000 milisegundos)
 setInterval(obtenerIndicadores, 5000);
 
-
-//Indicadores 2
-/*const url = "https://mindicador.cl/api";
-
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("dolar").textContent = `$ ${data.dolar.valor.toFixed(2)}`;
-    document.getElementById("euro").textContent = `$ ${data.euro.valor.toFixed(2)}`;
-    document.getElementById("uf").textContent = `$ ${data.uf.valor.toFixed(2)}`;
-    document.getElementById("ipc").textContent = `$ ${data.ipc.valor.toFixed(2)}`;
-    document.getElementById("utm").textContent = `$ ${data.utm.valor.toFixed(2)}`;
-    document.getElementById("bitcoin").textContent = `$ ${data.bitcoin.valor.toFixed(2)}`;
-    // duplicar los elementos para repetir los indicadores
-    document.getElementById("dolar2").textContent = `$ ${data.dolar.valor.toFixed(2)}`;
-    document.getElementById("euro2").textContent = `$ ${data.euro.valor.toFixed(2)}`;
-    document.getElementById("uf2").textContent = `$ ${data.uf.valor.toFixed(2)}`;
-    document.getElementById("ipc2").textContent = `$ ${data.ipc.valor.toFixed(2)}`;
-    document.getElementById("utm2").textContent = `$ ${data.utm.valor.toFixed(2)}`;
-  })
-  .catch(error => console.log(error));
-*/
-
 //Abrir pestañas
 
 function abrirBiobiochile() {
@@ -84,59 +61,7 @@ function abrirpublimetro(){
 }
  
  //Las Ultimas Noticias
-/* 
- (function() {
- function actualizarEnlace() {
-    var fecha = new Date(document.getElementById("fecha").value);
-    var fecha_enlace = fecha.toISOString().slice(0, 10);
-    console.log(fecha_enlace)
-    document.getElementById("enlace").href = "https://www.lun.com/Pages/NewsDetail.aspx?dt=" + fecha_enlace + "&EsAviso=0&PaginaId=1&bodyid=0";
-  }
 
-  function actualizarImagen() {
-    var fecha = new Date(document.getElementById("fecha").value);
-    fecha.setUTCHours(0, 0, 0, 0); // establecer la zona horaria de la fecha a UTC
-    console.log("Fecha en UTC:", fecha.toUTCString());
-    console.log("Fecha en zona horaria local:", fecha.toLocaleString());
-    var mes = fecha.toLocaleString('default', { month: 'short' });
-    var fecha_img = fecha.getFullYear() + "/" + mes.toLowerCase() + "/" + (fecha.getDate() < 10 ? '0' : '') + fecha.getDate();
-    //var fecha_img = fecha.getFullYear() + "/" + mes.toLowerCase() + "/" + fecha.getDate().toString().padStart(2, '0');
-    console.log(fecha_img)
-
-    //fecha_img = fecha_img.replace(/\//g, '/');
-    //fecha.setDate(fecha.getDate() + 1); // Agregamos un día a la fecha
-    fecha.setDate(fecha.getDate() + 1); // Agregamos un día a la fecha
-    mes = fecha.toLocaleString('default', { month: 'short' }); // Actualizamos el valor de mes
-    
-    var dia = fecha.getDate().toString().padStart(2, '0');
-    var mes_num = (fecha.getMonth() + 1).toString().padStart(2, '0');
-    
-    var url_final = "https://images.lun.com/lunservercontents/NewsPaperPages/" + fecha.getFullYear() + "/" + mes.toLowerCase() + "/" + dia + "/LUCST01LU" + dia + mes_num + "_550.jpg";
-    console.log(url_final)
-    document.getElementById("imagen").src = url_final;
-  }
-
-    var paralelepipedo = "Dann LeBeau"
-    console.log(paralelepipedo)
-
-  function actualizarEnlaces() {
-    actualizarEnlace();
-    actualizarImagen();
-  }
-
-  //Funcion de reseteo a hoy
-
-  function setearHoy() {
-    var hoy = new Date();
-    var dd = String(hoy.getDate()).padStart(2, '0');
-    var mm = String(hoy.getMonth() + 1).padStart(2, '0'); // Enero es 0
-    var yyyy = hoy.getFullYear();
-    var fecha = yyyy + '-' + mm + '-' + dd;
-    document.getElementById('fecha').value = fecha;
-    actualizarEnlaces(); //link LUN
-  } 
- })();*/
-// Esta opcion esta funcionando
  (function() {
   function actualizarEnlace() {
     var fecha = new Date(document.getElementById("fecha").value);
@@ -235,5 +160,34 @@ function abrirpublimetro(){
 })();
 
 // La Tercera
+
+function actualizarEnlaces() {
+  var fecha = document.getElementById("fecha").value;
+  var partesFecha = fecha.split("-");
+  var año = partesFecha[0];
+  var mes = partesFecha[1].padStart(2, '0');
+  var dia = partesFecha[2].padStart(2, '0');
+  var urlImagen = "https://img.kiosko.net/" + año + "/" + mes + "/" + dia + "/cl/cl_tercera.750.jpg";
+  document.getElementById("imagen_3").src = urlImagen;
+  console.log(urlImagen)
+}
+
+function setearHoy() {
+  var fechaHoy = new Date();
+  var año = fechaHoy.getFullYear();
+  var mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
+  var dia = fechaHoy.getDate().toString().padStart(2, '0');
+  var fechaActual = año + "-" + mes + "-" + dia;
+  document.getElementById("fecha").value = fechaActual;
+  actualizarEnlaces_3();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("fecha").valueAsDate = new Date(); // Establece la fecha actual en el campo de fecha
+  actualizarEnlaces(); // Actualiza los enlaces con la fecha actual al cargar la página
+});
+
+
+
 
 
