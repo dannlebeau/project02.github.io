@@ -1,34 +1,40 @@
 //Indicadores economicos
 
-fetch('https://mindicador.cl/api')
-  .then(response => response.json())
-  .then(data => {
-    // Extrae los valores de todas las variables de la API
-    const dolar = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.dolar.valor);
-    const euro = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.euro.valor);
-    const uf = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.uf.valor);
-    const ipc = data.ipc.valor;
-    const ivp = data.ivp.valor;
-    const tpm = data.tpm.valor;
-    const libra_cobre = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.libra_cobre.valor);
-    const tasa_desempleo = data.tasa_desempleo.valor;
-    const bitcoin = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.bitcoin.valor);
-    
-    // Agrega los indicadores al HTML
-    const indicadoresContainer = document.querySelector('.indicadores');
-    indicadoresContainer.innerHTML = `
-      <p>Dólar: ${dolar}</p>
-      <p>Euro: ${euro}</p>
-      <p>UF: ${uf}</p>
-      <p>IPC: ${ipc}%</p>
-      <p>IVP: $${ivp}</p>
-      <p>TPM: ${tpm}%</p>
-      <p>Libra de Cobre: ${libra_cobre}</p>
-      <p>Tasa de Desempleo: ${tasa_desempleo}%</p>
-      <p>Bitcoin: ${bitcoin}</p>
-    `;
-  })
-  .catch(error => console.error(error));
+function obtenerIndicadores() {
+  fetch('https://mindicador.cl/api')
+    .then(response => response.json())
+    .then(data => {
+      // Extrae los valores de todas las variables de la API
+      const dolar = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.dolar.valor);
+      const euro = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.euro.valor);
+      const uf = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.uf.valor);
+      const ipc = data.ipc.valor;
+      const ivp = data.ivp.valor;
+      const tpm = data.tpm.valor;
+      const libra_cobre = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.libra_cobre.valor);
+      const tasa_desempleo = data.tasa_desempleo.valor;
+      const bitcoin = new Intl.NumberFormat('es-CL', {style: 'currency', currency: 'CLP'}).format(data.bitcoin.valor);
+
+      // Agrega los indicadores al HTML
+      const indicadoresContainer = document.querySelector('.indicadores');
+      indicadoresContainer.innerHTML = `
+        <p>Dólar: ${dolar}</p>
+        <p>Euro: ${euro}</p>
+        <p>UF: ${uf}</p>
+        <p>IPC: ${ipc}%</p>
+        <p>IVP: $${ivp}</p>
+        <p>TPM: ${tpm}%</p>
+        <p>Libra de Cobre: ${libra_cobre}</p>
+        <p>Tasa de Desempleo: ${tasa_desempleo}%</p>
+        <p>Bitcoin: ${bitcoin}</p>
+      `;
+    })
+    .catch(error => console.error(error));
+}
+
+// Ejecutar la función cada 5 segundos (5000 milisegundos)
+setInterval(obtenerIndicadores, 5000);
+
 
 //Indicadores 2
 /*const url = "https://mindicador.cl/api";
@@ -52,9 +58,23 @@ fetch(url)
   .catch(error => console.log(error));
 */
 
+//Abrir pestañas
 
+function abrirBiobiochile() {
+  window.open("https://www.biobiochile.cl");
+}
 
-  
+function abrirCooperativa() {
+  window.open("https://www.cooperativa.cl");
+}
+
+function abrirDiarioOficial(){
+  window.open("https://www.diariooficial.interior.gob.cl/#close");
+}
+
+function abrirleychile(){
+  window.open("https://www.bcn.cl/leychile/");
+}  
  
  
  //Las Ultimas Noticias
