@@ -1,3 +1,4 @@
+//Hora
 function obtenerFechaHora() {
   const fechaHora = new Date();
 
@@ -30,10 +31,6 @@ setInterval(() => {
 
 //Apartado de noticias
 //Noticias - Chile
-
-// Define tu clave de API
-//var apiKey = '849f4efb75f8e186ba97ed5e36b585de';
-
 
 //Noticias - Francia
 
