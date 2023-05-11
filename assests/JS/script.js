@@ -1,3 +1,124 @@
+function obtenerFechaHora() {
+  const fechaHora = new Date();
+
+  const dia = fechaHora.getDate();
+  const mes = fechaHora.getMonth() + 1;
+  const año = fechaHora.getFullYear();
+
+  const hora = fechaHora.getHours();
+  const minutos = fechaHora.getMinutes();
+  const segundos = fechaHora.getSeconds();
+
+  const fechaHoraFormateada = `${dia}/${mes}/${año} ${hora}:${minutos}:${segundos}`;
+
+  const elementoFechaHora = document.getElementById('fecha-hora-actual');
+  elementoFechaHora.textContent = fechaHoraFormateada;
+}
+
+function actualizarSegundos() {
+  const elementoSegundos = document.getElementById('segundos-actuales');
+  const fechaHora = new Date();
+  const segundos = fechaHora.getSeconds();
+  elementoSegundos.textContent = segundos.toString().padStart(2, '0');
+}
+
+obtenerFechaHora();
+setInterval(() => {
+  obtenerFechaHora();
+  actualizarSegundos();
+}, 1000);
+
+//Apartado de noticias
+//Noticias - Chile
+
+// Define tu clave de API
+//var apiKey = '849f4efb75f8e186ba97ed5e36b585de';
+
+
+//Noticias - Francia
+
+// Define tu clave de API
+var apiKey = '103cb46335a4498eb77b025c9466efbc';
+
+// Crea la URL para la solicitud
+var url = 'https://newsapi.org/v2/top-headlines?' +
+          'country=fr&' +
+          'apiKey=' + apiKey;
+
+// Realiza la solicitud a NewsAPI
+fetch(url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    var noticias = data.articles;
+    var noticiasContainer = document.getElementById('noticias-container-fr');
+
+    // Itera sobre las noticias
+    noticias.forEach(function(noticia) {
+      var titulo = noticia.title;
+      var descripcion = noticia.description;
+      var fuente = noticia.source.name;
+
+      // Crea un elemento de noticia
+      var elementoNoticia = document.createElement('div');
+      elementoNoticia.innerHTML = '<h4>' + titulo + '</h4>' +
+                                  //'<p>' + descripcion + '</p>' +
+                                  '<p>Fuente: ' + fuente + '</p>';
+
+      // Agrega el elemento de noticia al contenedor
+      noticiasContainer.appendChild(elementoNoticia);
+    });
+  })
+  .catch(function(error) {
+    console.error(error);
+  });
+
+//Noticias - Gran Bretaña
+
+// Define tu clave de API
+var apiKey = '103cb46335a4498eb77b025c9466efbc';
+
+// Crea la URL para la solicitud
+var url = 'https://newsapi.org/v2/top-headlines?' +
+          'country=gb&' +
+          'apiKey=' + apiKey;
+
+// Realiza la solicitud a NewsAPI
+fetch(url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    var noticias = data.articles;
+    var noticiasContainer = document.getElementById('noticias-container-gb');
+
+    // Itera sobre las noticias
+    noticias.forEach(function(noticia) {
+      var titulo = noticia.title;
+      var descripcion = noticia.description;
+      var fuente = noticia.source.name;
+
+      // Crea un elemento de noticia
+      var elementoNoticia = document.createElement('div');
+      elementoNoticia.innerHTML = '<h4>' + titulo + '</h4>' +
+                                  //'<p>' + descripcion + '</p>' +
+                                  '<p>Fuente: ' + fuente + '</p>';
+
+      // Agrega el elemento de noticia al contenedor
+      noticiasContainer.appendChild(elementoNoticia);
+    });
+  })
+  .catch(function(error) {
+    console.error(error);
+  });
+
+
+
+
+
+
+
 //Indicadores economicos
 
 function obtenerIndicadores() {
@@ -35,7 +156,7 @@ function obtenerIndicadores() {
 // Ejecutar la función cada 5 segundos (5000 milisegundos)
 setInterval(obtenerIndicadores, 5000);
 
-//Abrir pestañas
+//Abrir pestañas Chile
 
 function abrirBiobiochile() {
   window.open("https://www.biobiochile.cl");
@@ -52,6 +173,9 @@ function abrirDiarioOficial(){
 function abrirleychile(){
   window.open("https://www.bcn.cl/leychile/");
 }  
+function abrirFinanciero(){
+  window.open("https://www.df.cl/")
+}
 
 function abrirhoyxhoy(){
   window.open("https://www.hoyxhoy.cl/");
@@ -59,10 +183,68 @@ function abrirhoyxhoy(){
 function abrirpublimetro(){
   window.open("https://www.publimetro.cl/");
 }
+
+function abrirDiarioantofagasta(){
+  window.open("https://www.diarioantofagasta.cl/")
+}
  
+function abrirElMostrador(){
+  window.open("https://www.elmostrador.cl/")
+}
+
+function abrirLaNacion(){
+  window.open("https://www.lanacion.cl/")
+}
+
+//Abrir pestañas Inglaterra
+
+function abrirNottingham(){
+  window.open("https://www.nottinghampost.com/")
+}
+
+function abrirDailyMail(){
+  window.open("https://www.dailymail.co.uk/home/index.html")
+}
+
+function abrirExpress(){
+  window.open("https://www.express.co.uk/")
+}
+
+function abrirTheTimes(){
+  window.open("https://www.thetimes.co.uk/")
+}
+
+function abrirDailyrecord(){
+  window.open("https://www.dailyrecord.co.uk/")
+}
+
+
+
+//Abrir pestañas Francia
+
+function abrirLeMonde(){
+  window.open("https://www.lemonde.fr/")
+}
+
+function abrirLeParisien(){
+  window.open("https://www.leparisien.fr/")
+}
+
+function abrir20minutes(){
+  window.open("https://www.20minutes.fr/")
+}
+
+function abrirLeTelegramme(){
+  window.open("https://www.letelegramme.fr/")
+}
+
+function abrirLaMarseillaise(){
+  window.open("https://www.lamarseillaise.fr/")
+}
+
  //Las Ultimas Noticias
 
- (function() {
+(function() {
   function actualizarEnlace() {
     var fecha = new Date(document.getElementById("fecha").value);
     var fecha_enlace = fecha.toISOString().slice(0, 10);
