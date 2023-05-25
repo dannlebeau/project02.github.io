@@ -62,7 +62,7 @@
             <button onclick="abrirDiarioOficial()" class="button">
                 <img src="./assests/img/Diario_oficial.png" alt="Logo DiarioOficial" class="logo"></button> 
             <button onclick="abrirleychile()" class="button">
-                <img src="./assests/img/ley_chile.png" alt="Logo LeyChile" class="logo"></button> 
+                <img src="./assests/img/ley_chile.png" alt="Logo LeyChile" class="logo"></button><br><br> 
             <button onclick="abrirFinanciero()" class="button">
                 <img src="./assests/img/logo-diariofinanciero.svg" alt="Logo Financiero" class="logo"></button> 
             </section>
@@ -83,7 +83,6 @@
                     
                     <img id="imagen" src="https://images.lun.com/luncontents/NewsPaperPages/2023/abr/15/LUCPR01LU1504_550.jpg" width="300px" height="400px">
                 </a></td>
-
                 <!--<td><a id="enlace_1" href="http://www.hoyxhoy.cl/2023/04/14/full/cuerpo-principal/1/" target="_blank">
                     <img id="imagen_1"src="	http://impresa.soy-chile.cl/HoyxHoy/140423/hoyxhoy/14_04_23_pag_01-1440-3e03f3.jpg" width="300px" height="400px">
                 </a></td>-->
@@ -91,6 +90,10 @@
                     <img id="imagen_2" src="https://rm.metrolatam.com/2023/05/10/santiago/full_1-7d2b275a874d0edc12192b02e1059996.webp" width="300px" height="400px"></a></td>
                 <td><a id="enlace_3" href="https://www.latercera.com/" target="_blank">
                     <img id="imagen_3"src="https://img.kiosko.net/2023/04/14/cl/cl_tercera.750.jpg" width="300px" height="400px"></a></td>
+                <td><a id="enlace_4" href="https://digital.elmercurio.com/2023/05/25/A" target="_blank">
+                    <img id="imagen_4"src="https://img.kiosko.net/2023/05/12/cl/cl_mercurio.750.jpg" width="250px" height="400px"></a></td>
+                <td><a id="enlace_5" href="https://www.df.cl/" target="_blank">
+                    <img id="imagen_5"src="https://img.kiosko.net/2023/05/12/cl/cl_diario_financiero.750.jpg" width="300px" height="400px"></a></td>
             </div>
         </div><br><br><br><br><br><br><br><br>
         <section id="nacional" class="container">
@@ -101,7 +104,7 @@
                 <img src="./assests/img/publimetro.png" alt="Logo publimetro" class="logo"></button> 
          
             <button onclick="abrirDiarioantofagasta()" class="button">
-                <img src="./assests/img//Diario_Antofagasta.jpg" alt="Logo Diario_antofagasta" class="logo"></button> 
+                <img src="./assests/img//Diario_Antofagasta.jpg" alt="Logo Diario_antofagasta" class="logo"></button><br><br> 
             <button onclick="abrirElMostrador()" class="button">
                     <img src="./assests/img/logo_elmostrador.svg" alt="Logo Mostrador" class="logo"></button>
             <button onclick="abrirLaNacion()" class="button">
@@ -122,7 +125,7 @@
                 <img src="./assests/img/logo_daily.gif" alt="Logo DailyMail" class="logo"></button> 
          
             <button onclick="abrirExpress()" class="button">
-                <img src="./assests/img/logo_express.png" alt="Logo Express" class="logo"></button> 
+                <img src="./assests/img/logo_express.png" alt="Logo Express" class="logo"></button><br><br> 
             <button onclick="abrirTheTimes()" class="button">
                     <img src="./assests/img/logo_the_timespng.png" alt="Logo Mostrador" class="logo"></button>
             <button onclick="abrirDailyrecord()" class="button">
@@ -144,20 +147,21 @@
                 <img src="./assests/img/logo_Le_Parisien.png" alt="Logo LeParisien" class="logo"></button> 
          
             <button onclick="abrir20minutes()" class="button">
-                <img src="./assests/img/logo_20_minutes.png" alt="Logo 20minutes" class="logo"></button> 
+                <img src="./assests/img/logo_20_minutes.png" alt="Logo 20minutes" class="logo"></button><br><br> 
             <button onclick="abrirLeTelegramme()" class="button">
                     <img src="./assests/img/logo_le_telegramme.png" alt="Logo LeTelegramme" class="logo"></button>
             <button onclick="abrirLaMarseillaise()" class="button">
                     <img src="./assests/img/logo_LaMarseillaise.png" alt="Logo LaMarseillaise" class="logo"></button>       
         </div>
     </section>
+    <!-- 
     <section id="tv">
         <h2 id="title">Televisión en Vivo</h2>
         <table id="channel">
             <tr>
                 <td class="custom-cell"><iframe id="player" class="envivo-player-default" src="https://rudo.video/live/c13?c3=13CL&amp;autostart=1&amp;volume=0&amp;tag=eyJwcmUiOiJodHRwczpcL1wvcHViYWRzLmcuZG91YmxlY2xpY2submV0XC9nYW1wYWRcL2Fkcz9pdT1cLzExMjM3MjIwN1wvZW52aXZvLmNsXC9lbnZpdm9cL3ByZXJvbGwmZGVzY3JpcHRpb25fdXJsPWh0dHAlM0ElMkYlMkZ3d3cuMTMuY2wlMkZlbi12aXZvJmVudj12cCZpbXBsPXMmY29ycmVsYXRvcj0mdGZjZD0wJm5wYT0wJmdkZnBfcmVxPTEmb3V0cHV0PXZhc3Qmc3o9NjU2eDM2OCZjaXVfc3pzPTcyOHg5MCw5NzB4OTAsOTcweDI1MCwxOTAweDgyNSwxOTIweDc2OCw0MDB4NjAmdW52aWV3ZWRfcG9zaXRpb25fc3RhcnQ9MSZwbW5kPTAmcG14ZD0xMjAwMDAmcG1hZD0yJnBvZD0xIiwicG9zdCI6MCwibWlkIjp7InRhZyI6MCwidGltZSI6W119LCJvdmVyIjp7InRhZyI6Imh0dHBzOlwvXC9wdWJhZHMuZy5kb3VibGVjbGljay5uZXRcL2dhbXBhZFwvYWRzP2l1PVwvMTEyMzcyMjA3XC9lbnZpdm8uY2xcL2Vudml2b1wvb3ZlcmxheSZkZXNjcmlwdGlvbl91cmw9aHR0cCUzQSUyRiUyRnd3dy4xMy5jbCUyRmVuLXZpdm8mZW52PXZwJmltcGw9cyZjb3JyZWxhdG9yPSZ0ZmNkPTAmbnBhPTAmZ2RmcF9yZXE9MSZvdXRwdXQ9dmFzdCZ2YWRfdHlwZT1ub25saW5lYXImc3o9NDAweDYwJm1pIiwidGltZSI6WzYwXX19" allow="autoplay; fullscreen; encrypted-media" frameborder="0" allowfullscreen="" allowscriptaccess="always" scrolling="no"></iframe></td>
                 <td class="" rowspan="3"><iframe src="https://mdstrm.com/live-stream/5c928b7f6d6f41084bdae898?jsapi=true&amp;autoplay=true&amp;access_token=k5vQHX2v3VG7odThycvfekcApYAeG50KqVW669pikke7sduZtGHsT7CxKn1ijwM842aq1dkoeoo&amp;custom.categoria_prontus=senal-online&amp;custom.dfpLanguage=es&amp;custom.dfpCountry=cl&amp;custom.dfpShowName=senal-online&amp;custom.dfpVidId=&amp;custom.dfpURLEncoded=https%3A%2F%2Fwww.chilevision.cl%2Fsenal-online&amp;custom.dfpRandomNumber=2260160457&amp;custom.origen=chilevision&amp;custom.iu=%2F1047933%2Fchilevision&amp;custom.app=false&amp;custom.cust_params=sect%253Dlive%2526sub%253Dsenal-online%2526show%253Dsenal-online%2526videotype%253Dlive%2526cat%253Dlive%2526vidid%253D%2526site%253Dchilevision%2526app%253Dfalse%2526theme%253Dge&amp;custom.amp=false&amp;custom.appname=" width="800" height="460" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen="" allowscriptaccess="always" scrolling="no"></iframe></td>
-                <!--<iframe src="https://mdstrm.com/live-stream/5c928b7f6d6f41084bdae898?jsapi=true&amp;autoplay=true&amp;access_token=k5vQHX2v3VG7odThycvfekcApYAeG50KqVW669pikke7sduZtGHsT7CxKn1ijwM842aq1dkoeoo&amp;custom.categoria_prontus=senal-online&amp;custom.dfpLanguage=es&amp;custom.dfpCountry=cl&amp;custom.dfpShowName=senal-online&amp;custom.dfpVidId=&amp;custom.dfpURLEncoded=https%3A%2F%2Fwww.chilevision.cl%2Fsenal-online&amp;custom.dfpRandomNumber=2260160457&amp;custom.origen=chilevision&amp;custom.iu=%2F1047933%2Fchilevision&amp;custom.app=false&amp;custom.cust_params=sect%253Dlive%2526sub%253Dsenal-online%2526show%253Dsenal-online%2526videotype%253Dlive%2526cat%253Dlive%2526vidid%253D%2526site%253Dchilevision%2526app%253Dfalse%2526theme%253Dge&amp;custom.amp=false&amp;custom.appname=" width="800" height="460" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen="" allowscriptaccess="always" scrolling="no"></iframe>-->
+                <!--<iframe src="https://mdstrm.com/live-stream/5c928b7f6d6f41084bdae898?jsapi=true&amp;autoplay=true&amp;access_token=k5vQHX2v3VG7odThycvfekcApYAeG50KqVW669pikke7sduZtGHsT7CxKn1ijwM842aq1dkoeoo&amp;custom.categoria_prontus=senal-online&amp;custom.dfpLanguage=es&amp;custom.dfpCountry=cl&amp;custom.dfpShowName=senal-online&amp;custom.dfpVidId=&amp;custom.dfpURLEncoded=https%3A%2F%2Fwww.chilevision.cl%2Fsenal-online&amp;custom.dfpRandomNumber=2260160457&amp;custom.origen=chilevision&amp;custom.iu=%2F1047933%2Fchilevision&amp;custom.app=false&amp;custom.cust_params=sect%253Dlive%2526sub%253Dsenal-online%2526show%253Dsenal-online%2526videotype%253Dlive%2526cat%253Dlive%2526vidid%253D%2526site%253Dchilevision%2526app%253Dfalse%2526theme%253Dge&amp;custom.amp=false&amp;custom.appname=" width="800" height="460" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen="" allowscriptaccess="always" scrolling="no"></iframe>//
                 <td class="custom-cell"><iframe src="https://mdstrm.com/live-stream/57a498c4d7b86d600e5461cb?jsapi=true&amp;autoplay=true&amp;controls=true&amp;volume=0&amp;player=57f40bb4dc5b9f3075c49cfe&amp;access_token=2YCxgbN7dmWKQZW7ZyttAt7zG19AMs9N35VEpBAKtw4xC1tbOVDk4zc2obMyBUCKLsXIOXnygKV&amp;custom.ui=%2F317342475%2Ftvn&amp;custom.tvn_demo=&amp;custom.tvn_tipo=EnVivo&amp;custom.tvn_seccion=senal-en-vivo&amp;custom.tvn_articulo=57a498c4d7b86d600e5461cb&amp;custom.tvn_tags=" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen="" allowscriptaccess="always" scrolling="no"></iframe></td>
             </tr>
             <tr>
@@ -169,7 +173,7 @@
                 <td class="custom-cell"><iframe src="https://www.youtube.com/embed/rWnmj5wlY1o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
             </tr>
         </table>
-    </section>
+    </section>-->
     <br>
     <section id="contacto">
         <h2 id="title">Formulario de Contacto</h2>
@@ -197,10 +201,7 @@
                     </ul>
                 </footer>
             </div>
-            <script src="./assests/JS/script.js"></script>
-
-
-
+    <script src="./assests/JS/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>  
     </body>

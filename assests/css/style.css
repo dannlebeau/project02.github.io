@@ -8,13 +8,13 @@
   z-index: 1; /* Establecer el índice de posición */
 }
 
-#imagen:hover, #imagen_3:hover {
+#imagen:hover, #imagen_3:hover, #imagen_4:hover, #imagen_5:hover {
   transform: scale(2);
   border-color: #00FF00;
   position:relative;
 }
 
-#imagen, #imagen_3 {
+#imagen, #imagen_3, #imagen_4, #imagen_5 {
   margin: 20px;
   border: 2px solid #FF0000;
 }
@@ -151,3 +151,29 @@ footer {
     margin-right: 0;
   }
   
+  /*Responsivididad*/
+/* Estilos para tablet Galaxy S5 */
+@media only screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .container {
+        /* Estilos específicos para tablet Galaxy S5 */
+    }
+  
+    /* Otros estilos específicos para tablet Galaxy S5 */
+}
+
+/* Estilos para iPhone 11 */
+@media only screen 
+  and (device-width: 414px) 
+  and (device-height: 896px) 
+  and (-webkit-device-pixel-ratio: 2) {
+    .container {
+        /* Estilos específicos para iPhone 11 */
+    }
+  
+    /* Otros estilos específicos para iPhone 11 */
+}
+
+

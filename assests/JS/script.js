@@ -366,7 +366,85 @@ document.addEventListener("DOMContentLoaded", function() {
   actualizarEnlaces(); // Actualiza los enlaces con la fecha actual al cargar la página
 });
 
+var equipo ="Colo-Colo"
+  console.log(equipo)
 
 
+// El Mercurio
 
+function actualizarEnlace_4() {
+  var fecha = new Date(document.getElementById("fecha").value);
+  fecha.setDate(fecha.getDate() + 1); // Agregar un día a la fecha
+
+  var año = fecha.getFullYear();
+  var mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+  var dia = fecha.getDate().toString().padStart(2, '0');
+  var urlEnlace_4 = "https://digital.elmercurio.com/" + año + "/" + mes + "/" + dia + "/A";
+  document.getElementById("enlace_4").href = urlEnlace_4;
+
+  console.log("Enlace actualizado: " + urlEnlace_4);
+}
+
+function actualizarImagen_4() {
+  var fecha = new Date(document.getElementById("fecha").value);
+  fecha.setDate(fecha.getDate() + 1); // Agregar un día a la fecha
+
+  var año = fecha.getFullYear();
+  var mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+  var dia = fecha.getDate().toString().padStart(2, '0');
+  var urlImagen_4 = "https://img.kiosko.net/" + año + "/" + mes + "/" + dia + "/cl/cl_mercurio.750.jpg";
+
+  var imagen_4 = document.getElementById("imagen_4");
+  if (imagen_4) {
+    imagen_4.onload = function() {
+      console.log("Imagen actualizada: " + urlImagen_4);
+    };
+    imagen_4.src = urlImagen_4;
+  } else {
+    console.log("Error: No se encontró el elemento de imagen.");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var fechaElement = document.getElementById("fecha");
+  var enlace4Element = document.getElementById("enlace_4");
+  var imagen4Element = document.getElementById("imagen_4");
+
+  if (fechaElement && enlace4Element && imagen4Element) {
+    fechaElement.valueAsDate = new Date(); // Establece la fecha actual en el campo de fecha
+    actualizarEnlace_4(); // Actualiza el enlace al cargar la página
+    actualizarImagen_4(); // Actualiza la imagen al cargar la página
+    fechaElement.addEventListener("change", actualizarEnlace_4);
+    fechaElement.addEventListener("change", actualizarImagen_4);
+
+    console.log("Eventos asignados correctamente.");
+  } else {
+    console.log("Error: No se encontraron elementos HTML con los ID correspondientes.");
+  }
+});
+
+// Diario Financiero
+// Actualizar la imagen imagen_5
+function actualizarImagen_5() {
+  var fecha = new Date(document.getElementById("fecha").value);
+  fecha.setDate(fecha.getDate() + 1); // Agregar un día a la fecha
+
+  var año = fecha.getFullYear();
+  var mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+  var dia = fecha.getDate().toString().padStart(2, '0');
+  var urlImagen_5 = "https://img.kiosko.net/" + año + "/" + mes + "/" + dia + "/cl/cl_diario_financiero.750.jpg";
+
+  var imagen_5 = document.getElementById("imagen_5");
+  if (imagen_5) {
+    imagen_5.onload = function() {
+      console.log("Imagen actualizada: " + urlImagen_5);
+    };
+    imagen_5.src = urlImagen_5;
+  } else {
+    console.log("Error: No se encontró el elemento de imagen.");
+  }
+}
+
+// Asignar la función al evento correspondiente
+document.getElementById("fecha").addEventListener("change", actualizarImagen_5);
 
