@@ -239,7 +239,42 @@ function abrirLaMarseillaise(){
   window.open("https://www.lamarseillaise.fr/")
 }
 
- //Las Ultimas Noticias
+//Abrir Pestañas TV Nacional
+
+function abrircanal13(){
+  window.open("https://www.13.cl/en-vivo")
+
+}
+
+function abrirChv(){
+  window.open("https://www.chilevision.cl/senal-online")
+}
+
+function abrirMega(){
+  window.open("https://www.meganoticias.cl/senal-en-vivo/mega/")
+}
+
+function abrirTvn(){
+  window.open("https://www.tvn.cl/en-vivo")
+}
+
+function abrirUCV(){
+  window.open("https://ucvtv.cl/tv-directo.php")
+}
+
+function abrirRed(){
+  window.open("https://www.lared.cl/senal-online")
+}
+
+function abrirDiputado(){
+  window.open("https://www.camara.cl/prensa/television.aspx")
+}
+
+function abrirSenado(){
+  window.open("https://tv.senado.cl/")
+}
+
+//Las Ultimas Noticias
 
 (function() {
   function actualizarEnlace() {
