@@ -29,90 +29,157 @@ setInterval(() => {
   actualizarSegundos();
 }, 1000);
 
-//Apartado de noticias
+//------------------Apartado de noticias-------------------//
 //Noticias - Chile
 
 //Noticias - Francia
 
-// Define tu clave de API
-var apiKey = '103cb46335a4498eb77b025c9466efbc';
-
-// Crea la URL para la solicitud
-var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=fr&' +
-          'apiKey=' + apiKey;
-
-// Realiza la solicitud a NewsAPI
-fetch(url)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    var noticias = data.articles;
-    var noticiasContainer = document.getElementById('noticias-container-fr');
-
-    // Itera sobre las noticias
-    noticias.forEach(function(noticia) {
-      var titulo = noticia.title;
-      var descripcion = noticia.description;
-      var fuente = noticia.source.name;
-
-      // Crea un elemento de noticia
-      var elementoNoticia = document.createElement('div');
-      elementoNoticia.innerHTML = '<h4>' + titulo + '</h4>' +
-                                  //'<p>' + descripcion + '</p>' +
-                                  '<p>Fuente: ' + fuente + '</p>';
-
-      // Agrega el elemento de noticia al contenedor
-      noticiasContainer.appendChild(elementoNoticia);
+  var apiKey = '103cb46335a4498eb77b025c9466efbc';
+  var url = 'https://newsapi.org/v2/top-headlines?' +
+            'country=fr&' +
+            'apiKey=' + apiKey;
+  
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      var noticias = data.articles;
+      var noticiasContainer = document.getElementById('noticias-container-fr');
+      var anteriorButton = document.getElementById('anterior-fr');
+      var siguienteButton = document.getElementById('siguiente-fr');
+      var tituloIndex = 0;
+      var intervalId;
+  
+      function mostrarTitulares() {
+        noticiasContainer.innerHTML = '';
+  
+        for (var i = tituloIndex; i < tituloIndex + 3; i++) {
+          if (noticias[i]) {
+            var titulo = noticias[i].title;
+            var fuente = noticias[i].source.name;
+  
+            var elementoNoticia = document.createElement('div');
+            elementoNoticia.innerHTML = '<h4>' + titulo + '</h4>' +
+                                        '<p>Fuente: ' + fuente + '</p>';
+  
+            noticiasContainer.appendChild(elementoNoticia);
+          }
+        }
+      }
+  
+      function desplazamientoAutomatico() {
+        intervalId = setInterval(function() {
+          if (tituloIndex + 3 < noticias.length) {
+            tituloIndex += 3;
+          } else {
+            tituloIndex = 0;
+          }
+          mostrarTitulares();
+        }, 20000); // 20 segundos
+      }
+  
+      anteriorButton.addEventListener('click', function() {
+        clearInterval(intervalId);
+        tituloIndex = Math.max(tituloIndex - 3, 0);
+        mostrarTitulares();
+        desplazamientoAutomatico();
+      });
+  
+      siguienteButton.addEventListener('click', function() {
+        clearInterval(intervalId);
+        if (tituloIndex + 3 < noticias.length) {
+          tituloIndex += 3;
+        } else {
+          tituloIndex = 0;
+        }
+        mostrarTitulares();
+        desplazamientoAutomatico();
+      });
+  
+      mostrarTitulares();
+      desplazamientoAutomatico();
+    })
+    .catch(function(error) {
+      console.error(error);
     });
-  })
-  .catch(function(error) {
-    console.error(error);
-  });
+  
+
+
+
 
 //Noticias - Gran Bretaña
 
-// Define tu clave de API
-var apiKey = '103cb46335a4498eb77b025c9466efbc';
-
-// Crea la URL para la solicitud
-var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=gb&' +
-          'apiKey=' + apiKey;
-
-// Realiza la solicitud a NewsAPI
-fetch(url)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    var noticias = data.articles;
-    var noticiasContainer = document.getElementById('noticias-container-gb');
-
-    // Itera sobre las noticias
-    noticias.forEach(function(noticia) {
-      var titulo = noticia.title;
-      var descripcion = noticia.description;
-      var fuente = noticia.source.name;
-
-      // Crea un elemento de noticia
-      var elementoNoticia = document.createElement('div');
-      elementoNoticia.innerHTML = '<h4>' + titulo + '</h4>' +
-                                  //'<p>' + descripcion + '</p>' +
-                                  '<p>Fuente: ' + fuente + '</p>';
-
-      // Agrega el elemento de noticia al contenedor
-      noticiasContainer.appendChild(elementoNoticia);
+  var apiKey = '103cb46335a4498eb77b025c9466efbc';
+  var url = 'https://newsapi.org/v2/top-headlines?' +
+            'country=gb&' +
+            'apiKey=' + apiKey;
+  
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      var noticias = data.articles;
+      var noticiasContainer = document.getElementById('noticias-container-gb');
+      var anteriorButton = document.getElementById('anterior');
+      var siguienteButton = document.getElementById('siguiente');
+      var tituloIndex = 0;
+      var intervalId;
+  
+      function mostrarTitulares() {
+        noticiasContainer.innerHTML = '';
+  
+        for (var i = tituloIndex; i < tituloIndex + 3; i++) {
+          if (noticias[i]) {
+            var titulo = noticias[i].title;
+            var fuente = noticias[i].source.name;
+  
+            var elementoNoticia = document.createElement('div');
+            elementoNoticia.innerHTML = '<h4>' + titulo + '</h4>' +
+                                        '<p>Fuente: ' + fuente + '</p>';
+  
+            noticiasContainer.appendChild(elementoNoticia);
+          }
+        }
+      }
+  
+      function desplazamientoAutomatico() {
+        intervalId = setInterval(function() {
+          if (tituloIndex + 3 < noticias.length) {
+            tituloIndex += 3;
+          } else {
+            tituloIndex = 0;
+          }
+          mostrarTitulares();
+        }, 20000); // 20 segundos
+      }
+  
+      anteriorButton.addEventListener('click', function() {
+        clearInterval(intervalId);
+        tituloIndex = Math.max(tituloIndex - 3, 0);
+        mostrarTitulares();
+        desplazamientoAutomatico();
+      });
+  
+      siguienteButton.addEventListener('click', function() {
+        clearInterval(intervalId);
+        if (tituloIndex + 3 < noticias.length) {
+          tituloIndex += 3;
+        } else {
+          tituloIndex = 0;
+        }
+        mostrarTitulares();
+        desplazamientoAutomatico();
+      });
+  
+      mostrarTitulares();
+      desplazamientoAutomatico();
+    })
+    .catch(function(error) {
+      console.error(error);
     });
-  })
-  .catch(function(error) {
-    console.error(error);
-  });
-
-
-
-
+  
 
 
 
